@@ -3,18 +3,31 @@ from dry.helpers import Mapa, menor_caminho
 from .models import Rota
 
 
-def calcula_menor_frete(origem, destino, autonomia, preco):
+def calcula_menor_frete(nome, origem, destino, autonomia, preco):
     """Calcula o menor custo do frete."""
-    distancia, caminho = calcula_menor_caminho(origem, destino)
+    distancia, caminho = calcula_menor_caminho(nome, origem, destino)
 
-    custo = distancia * preco / autonomia
-    return "O menor frete é {0} e o caminho é {1}".format(custo, caminho)
+    result = {}
+    try:
+        result['nome'] = nome
+        result['origem'] = origem
+        result['destino'] = destino
+        result['autonomia'] = autonomia
+        result['preco'] = preco
+        result['caminho'] = caminho
+        result['distancia'] = distancia
+        result['valor_frete'] = float(distancia) * float(preco) / float(autonomia)
+
+        return result
+    except TypeError:
+        result['error'] = 'Distância, preço do combustível e autonomia devem ser numéricos'
+        return result
 
 
-def calcula_menor_caminho(origem, destino):
+def calcula_menor_caminho(nome, origem, destino):
     """Retorna o menor caminho entre os dois pontos."""
     mapa = Mapa()
-    rotas = Rota.objects.all()
+    rotas = Rota.objects.filter(nome=nome)
 
     for rota in rotas:
         mapa.add_ponto(rota.origem)

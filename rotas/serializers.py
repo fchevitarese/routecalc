@@ -6,12 +6,16 @@ from .models import Rota
 class RotaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Rota
-        fields = ('origem', 'destino', 'distancia', 'created', 'updated')
+        fields = ('nome', 'origem', 'destino', 'distancia',
+                  'created', 'updated')
 
 
 class MenorRotaSerializer(serializers.Serializer):
+    nome = serializers.CharField()
     origem = serializers.CharField()
     destino = serializers.CharField()
     autonomia = serializers.IntegerField()
-    preco = serializers.IntegerField()
-
+    preco = serializers.FloatField()
+    valor_frete = serializers.FloatField()
+    caminho = serializers.CharField()
+    distancia = serializers.IntegerField()
