@@ -25,9 +25,9 @@ class RotaViewSet(viewsets.ModelViewSet):
         """
         try:
             params = request.query_params
-            nome = params['nome']
-            origem = params['origem']
-            destino = params['destino']
+            nome = params['nome'].upper()
+            origem = params['origem'].upper()
+            destino = params['destino'].upper()
             autonomia = params['autonomia']
             preco = params['preco']
 
@@ -42,5 +42,7 @@ class RotaViewSet(viewsets.ModelViewSet):
 
             return Response(serializer.data)
         except MultiValueDictKeyError:
-            return Response({'result': 'Parâmetros incorretos. '})
+            return Response({'result': u'Parâmetros incorretos. '})
+        except KeyError:
+            return Response({'result': u'Rota não encontrada.'})
 

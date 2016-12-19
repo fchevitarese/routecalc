@@ -22,5 +22,5 @@ schema_view = get_swagger_view(title='RouteCalc API')
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include('rotas.urls')),
-    url(r'^', schema_view),
+    url(r'^$', schema_view),
 ]

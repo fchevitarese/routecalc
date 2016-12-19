@@ -1,0 +1,12 @@
+version: '2'
+services:
+    web:
+        build:
+            context: .
+            dockerfile: Dockerfile-python2
+        container_name: routecalc_app
+        command: bash -c "python manage.py runserver 0.0.0.0:8000"
+        volumes:
+            - .:/code
+        ports:
+            - "8000:8000"

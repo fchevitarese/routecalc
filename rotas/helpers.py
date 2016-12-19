@@ -2,13 +2,16 @@
 from dry.helpers import Mapa, menor_caminho
 from .models import Rota
 
+class RouteNotFound(Exception):
+    pass
+
 
 def calcula_menor_frete(nome, origem, destino, autonomia, preco):
     """Calcula o menor custo do frete."""
-    distancia, caminho = calcula_menor_caminho(nome, origem, destino)
-
     result = {}
+
     try:
+        distancia, caminho = calcula_menor_caminho(nome, origem, destino)
         result['nome'] = nome
         result['origem'] = origem
         result['destino'] = destino
@@ -17,11 +20,12 @@ def calcula_menor_frete(nome, origem, destino, autonomia, preco):
         result['caminho'] = caminho
         result['distancia'] = distancia
         result['valor_frete'] = float(distancia) * float(preco) / float(autonomia)
-
-        return result
     except TypeError:
-        result['error'] = 'Distância, preço do combustível e autonomia devem ser numéricos'
-        return result
+        result['error'] = u'Distância, preço do combustível e autonomia devem ser numéricos'
+    except ValueError:
+        result['error'] = u'Rota não encontrada'
+
+    return result
 
 
 def calcula_menor_caminho(nome, origem, destino):
@@ -32,6 +36,6 @@ def calcula_menor_caminho(nome, origem, destino):
     for rota in rotas:
         mapa.add_ponto(rota.origem)
         mapa.add_rota(rota.origem,
-                      rota.destino,
-                      rota.distancia)
+                        rota.destino,
+                        rota.distancia)
     return menor_caminho(mapa, origem, destino)

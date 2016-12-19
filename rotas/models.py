@@ -1,10 +1,10 @@
 # encoding: utf-8
 from django.db import models
 from dry.models import BaseModel
-from dry.helpers import Mapa, menor_caminho
 
 
 class Rota(BaseModel):
+    u"""Armazena o mapa com os seus pontos e distâncias."""
     nome = models.CharField(max_length=5, verbose_name='Nome da rota',
                             blank=True, null=True)
     origem = models.CharField(max_length=10, verbose_name='Origem')
@@ -15,5 +15,12 @@ class Rota(BaseModel):
         return "{0} -> {1}: {2}".format(self.origem,
                                         self.destino,
                                         self.distancia)
+
+    def save(self, *args, **kwargs):
+        # Passando os pontos e o nome do mapa para maiúscolo no db.
+        self.nome = self.nome.upper()
+        self.origem = self.origem.upper()
+        self.destino = self.destino.upper()
+        super(Rota, self).save(*args, **kwargs)
 
 
