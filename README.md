@@ -1,12 +1,12 @@
-RouteCalc
+**RouteCalc**
 
-O projeto foi feito em Django 1.10.
+**O projeto foi feito em Django 1.10.
 
 Apaixonado por Django, fiz utilizando o mesmo pois é minha ferramenta de trabalho há anos!
 Por simplicidade, estou utilizando o SQLite para armazenar os dados com os pontos.
 O initial.json é um dump das coordenadas que foram passadas no exemplo no email.
 
-Como nome no mapa, utilizei a sigla do meu estado natal, Minas Gerais, portanto MG.
+Como nome no mapa, utilizei a sigla do meu estado natal, Minas Gerais, portanto MG.**
 
 
 * Instalação:
@@ -64,4 +64,3 @@ Como nome no mapa, utilizei a sigla do meu estado natal, Minas Gerais, portanto 
     {
         "result": "Rota não encontrada."
     }
-
