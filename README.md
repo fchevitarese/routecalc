@@ -19,6 +19,7 @@ Como nome no mapa, utilizei a sigla do meu estado natal, Minas Gerais, portanto 
 >     python manage.py runserver
 
 * **Docker**
+
     O projeto tem disponível 2 Dockerfiles diferentes, para python3 e python2.
 Dockerfile-python2
 Dockerfile-python3
@@ -31,8 +32,8 @@ Dockerfile-python3
         Python3: "dockerfile: Dockerfile-python3"
 
 
-* **Build**:
 
+* **Build**:
 
 >  docker-compose build
 >     docker-compose up
