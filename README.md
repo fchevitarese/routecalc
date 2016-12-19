@@ -35,7 +35,7 @@ Dockerfile-python3
 
 
 >  docker-compose build
->  docker-compose up
+>     docker-compose up
 
 
  * **Acesso**:
