@@ -28,39 +28,40 @@ Dockerfile-python3
 
     Para utilizar python3, é necessário configurar a diretiva "dockerfile" apontando para o dockerfile desejado:
 
-        Python2: "dockerfile: Dockerfile-python2"
-        Python3: "dockerfile: Dockerfile-python3"
 
 
+ 1. Python2: "dockerfile: Dockerfile-python2"
+ 2. Python3: "dockerfile: Dockerfile-python3"
 
-* **Build**:
+
+**Build**:
 
 >  docker-compose build
->     docker-compose up
+>  docker-compose up
 
 
- * **Acesso**:
+ 3. **Acesso**:
     A api está na raiz do projeto, portanto:
     http://localhost:8000/
 
 
- * **Calculando frete:**
+ 4. **Calculando frete:**
     Faça um **GET** passando os parâmetros necessários para o cálculo na url.
 
 
- * nome: Nome do mapa;
- * origem: Ponto de origem;
- * destino: Ponto de destino;
- * autonomia: Autonomia do veículo;
- * preco: Preço do combustível;
+ 5. nome: Nome do mapa;
+ 6. origem: Ponto de origem;
+ 7. destino: Ponto de destino;
+ 8. autonomia: Autonomia do veículo;
+ 9. preco: Preço do combustível;
 
- * **URL de exemplo:**
+ 10. **URL de exemplo:**
 
     http://localhost:8000/api/rotas/menor_frete/?nome=mg&origem=a&destino=d&autonomia=10&preco=2.50
 
 
 
- * **Padrão de retorno:**
+ 11. **Padrão de retorno:**
     O get na url acima deverá devolver o seguinte json:
 
 ```
