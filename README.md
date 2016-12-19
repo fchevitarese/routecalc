@@ -12,7 +12,7 @@ Como nome no mapa, utilizei a sigla do meu estado natal, Minas Gerais, portanto 
 
 **Instalação**:
 
->     git clone https://bitbucket.org/frederico_chevitarese/routecalc/admin
+>     git clone https://bitbucket.org/frederico_chevitarese/routecalc
 >     pip install -r requirements.txt
 >     python manage.py migrate
 >     python manage.py loaddata initial.json
