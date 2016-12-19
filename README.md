@@ -10,7 +10,7 @@ O initial.json é um dump das coordenadas que foram passadas no exemplo no email
 Como nome no mapa, utilizei a sigla do meu estado natal, Minas Gerais, portanto MG.
 
 
-* **Instalação**:
+**Instalação**:
 
 >     git clone https://bitbucket.org/frederico_chevitarese/routecalc/admin
 >     pip install -r requirements.txt
@@ -18,16 +18,16 @@ Como nome no mapa, utilizei a sigla do meu estado natal, Minas Gerais, portanto 
 >     python manage.py loaddata initial.json
 >     python manage.py runserver
 
-* **Docker**
+**Docker**
 
-    O projeto tem disponível 2 Dockerfiles diferentes, para python3 e python2.
+O projeto tem disponível 2 Dockerfiles diferentes, para python3 e python2.
+
 Dockerfile-python2
 Dockerfile-python3
 
-    No arquivo docker-compose.yaml, estou utilizando a versão com python2.
+No arquivo docker-compose.yaml, estou utilizando a versão com python2.
 
-    Para utilizar python3, é necessário configurar a diretiva "dockerfile" apontando para o dockerfile desejado:
-
+Para utilizar python3, é necessário configurar a diretiva "dockerfile" apontando para o dockerfile desejado:
 
 
  1. Python2: "dockerfile: Dockerfile-python2"
@@ -40,28 +40,28 @@ Dockerfile-python3
 >  docker-compose up
 
 
- 3. **Acesso**:
+ **Acesso**:
     A api está na raiz do projeto, portanto:
     http://localhost:8000/
 
 
- 4. **Calculando frete:**
+ **Calculando frete:**
     Faça um **GET** passando os parâmetros necessários para o cálculo na url.
 
 
- 5. nome: Nome do mapa;
- 6. origem: Ponto de origem;
- 7. destino: Ponto de destino;
- 8. autonomia: Autonomia do veículo;
- 9. preco: Preço do combustível;
+* nome: Nome do mapa;
+* origem: Ponto de origem;
+* destino: Ponto de destino;
+* autonomia: Autonomia do veículo;
+* preco: Preço do combustível;
 
- 10. **URL de exemplo:**
+
+**URL de exemplo:**
 
     http://localhost:8000/api/rotas/menor_frete/?nome=mg&origem=a&destino=d&autonomia=10&preco=2.50
 
 
-
- 11. **Padrão de retorno:**
+**Padrão de retorno:**
     O get na url acima deverá devolver o seguinte json:
 
 ```
