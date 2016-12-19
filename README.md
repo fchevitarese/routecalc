@@ -19,13 +19,15 @@ Como nome no mapa, utilizei a sigla do meu estado natal, Minas Gerais, portanto 
     python manage.py loaddata initial.json
 
 * Execução:
-    Para executar -> python manage.py runserver
-
+    Para executar: python manage.py runserver
 
 * Docker
     O projeto tem disponível 2 Dockerfiles diferentes, para python3 e python2.
+
     Está configurado para utilizar o python2.
+
     Para utilizar python3, é necessário configurar a diretiva "dockerfile" apontando para o dockerfile desejado:
+
         Python2: "dockerfile: Dockerfile-python2"
         Python3: "dockerfile: Dockerfile-python3"
 
