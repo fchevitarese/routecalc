@@ -78,7 +78,12 @@ Como nome no mapa, utilizei a sigla do meu estado natal, Minas Gerais, portanto 
 
 
 * Ponto ou mapa inexistente:
-    Caso passe um mapa inexistente ou alguma coordenada inexistente, receberá a mensagem de erro:
-    {
+    Caso passe um mapa ou coordenada inexistente, receberá a mensagem de erro:
+   
+```
+#!json
+
+ {
         "result": "Rota não encontrada."
     }
+```
