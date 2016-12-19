@@ -37,6 +37,7 @@ Para utilizar python3, é necessário configurar a diretiva "dockerfile" apontan
 **Build**:
 
 >  docker-compose build
+
 >  docker-compose up
 
 
