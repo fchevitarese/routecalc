@@ -1,4 +1,4 @@
-**RouteCalc**
+## **RouteCalc** ##
 
 O projeto foi feito em Django 1.10.
 
@@ -9,6 +9,7 @@ Por simplicidade, estou utilizando o SQLite para armazenar os dados com os ponto
 O initial.json é um dump das coordenadas que foram passadas no exemplo no email.
 
 Como nome no mapa, utilizei a sigla do meu estado natal, Minas Gerais, portanto MG.
+
 
 
 * Instalação:
