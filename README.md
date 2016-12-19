@@ -53,6 +53,7 @@ Como nome no mapa, utilizei a sigla do meu estado natal, Minas Gerais, portanto 
 
 
 * URL de exemplo:
+
    [ http://localhost:8000/api/rotas/menor_frete/?nome=mg&origem=a&destino=d&autonomia=10&preco=2.50](Link URL)
 
 
